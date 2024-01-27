@@ -5,9 +5,21 @@ class Task {
   final bool isDone;
 
   Task({
-    required this.id,
+    this.id,
     required this.title,
     required this.description,
     required this.isDone,
   });
+
+  Task copyWith({
+    int? id,
+    String? title,
+    bool? isDone,
+  }) {
+    return Task(
+      id: id ?? this.id,
+      title: title ?? this.title,
+      isDone: isDone ?? this.isDone,
+    );
+  }
 }
