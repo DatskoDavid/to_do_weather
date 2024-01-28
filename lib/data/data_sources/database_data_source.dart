@@ -1,4 +1,5 @@
 import 'package:hive/hive.dart';
+import 'package:hive_flutter/hive_flutter.dart';
 import 'package:to_do_weather/data/mappers/task_mapper.dart';
 
 import '../../domain/models/task.dart';
@@ -8,7 +9,8 @@ class DatabaseDataSource {
   static const _tasksTag = 'tasks';
   static late final Box<TaskDB> _tasksBox;
 
-  static Future<void> initializeHive({isTesting = false}) async {
+  static Future<void> initializeHive() async {
+    await Hive.initFlutter();
     Hive.registerAdapter(TaskDBAdapter());
     _tasksBox = await Hive.openBox<TaskDB>(_tasksTag);
   }
