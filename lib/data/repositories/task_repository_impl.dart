@@ -12,17 +12,11 @@ class TaskRepositoryImpl implements TaskRepository {
   Future<Task> addTask(Task task) async => db.createTask(task);
 
   @override
-  Future<void> deleteTask(int id) {}
+  Future<void> deleteTask(int id) async => db.deleteTask(id);
 
   @override
-  Future<List<Task>> getTasks() {
-    // TODO: implement getTasks
-    throw UnimplementedError();
-  }
+  Future<List<Task>> getTasks() async => db.getTasks();
 
   @override
-  Future<void> updateTask(Task task) {
-    // TODO: implement updateTask
-    throw UnimplementedError();
-  }
+  Future<void> updateTask(Task task) => db.updateTask(task);
 }

@@ -14,11 +14,13 @@ class Task {
   Task copyWith({
     int? id,
     String? title,
+    String? description,
     bool? isDone,
   }) {
     return Task(
       id: id ?? this.id,
       title: title ?? this.title,
+      description: description ?? this.description,
       isDone: isDone ?? this.isDone,
     );
   }

@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 
+import '../../domain/di/injector.dart';
 import '../../domain/models/task.dart';
 import '../../utils/bottom_sheet.dart';
 import '../../utils/colors.dart';
@@ -41,7 +42,7 @@ class _TasksScreenState extends State<TasksScreen> {
 
   @override
   void initState() {
-    _bloc = i.get<TasksBloc>()..add(const InitTasks());
+    _bloc = injector.get<TasksBloc>()..add(const InitTasks());
     _scrollController.addListener(() {
       final offset =
           _scrollController.hasClients ? _scrollController.offset : 0;
@@ -85,7 +86,7 @@ class _TasksScreenState extends State<TasksScreen> {
                     Task(
                       isDone: false,
                       title: title,
-                      description: '',
+                      description: 'default description',
                     ),
                   ),
                 ),
