@@ -1,6 +1,6 @@
 import 'package:flutter_bloc/flutter_bloc.dart';
 
-import '../../domain/repositories/task_repository.dart';
+import '../../../domain/repositories/task_repository.dart';
 import 'tasks_event.dart';
 import 'tasks_state.dart';
 
