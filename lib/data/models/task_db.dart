@@ -18,17 +18,20 @@ class TaskDB {
   const TaskDB({
     this.id,
     required this.title,
+    required this.description,
     required this.isDone,
   });
 
   TaskDB copyWith({
     int? id,
     String? title,
+    String? description,
     bool? isDone,
   }) {
     return TaskDB(
       id: id ?? this.id,
       title: title ?? this.title,
+      description: description ?? this.description,
       isDone: isDone ?? this.isDone,
     );
   }
